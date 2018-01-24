@@ -1,10 +1,9 @@
 <h2>Project Gallery</h2>
-
-<div *ngFor="let project of projects | async" (click)="goToDetailPage(project)" class="card">
-  <div class="card-title">
-    <h3>{{project.title}}</h3>
-  </div>
-  <div class="card-image">
-    <img src="{{project.image}}">
+<div id="gallery-content" class="row">
+  <div *ngFor="let project of projects | async" (click)="goToDetailPage(project)" class="card col-md-4">
+    <img  class="card-img-top" src="{{project.image}}">
+    <div class="card-body">
+      <h3 class="card-text">{{project.title}}</h3>
+    </div>
   </div>
 </div>
