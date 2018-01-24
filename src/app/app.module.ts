@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ROUTING } from './app.routing';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 import { AppComponent } from './app.component';
@@ -12,12 +15,12 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { ProjectGalleryComponent } from './project-gallery/project-gallery.component';
 import { AdminComponent } from './admin/admin.component';
 
-// export const firebaseConfig = {
-//   apiKey: masterFirebaseConfig.apiKey,
-//   authDomain: masterFirebaseConfig.authDomain,
-//   databaseURL: masterFirebaseConfig.databaseURL,
-//   storageBucket: masterFirebaseConfig.storageBucket
-// };
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { AdminComponent } from './admin/admin.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ROUTING
+    ROUTING,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
