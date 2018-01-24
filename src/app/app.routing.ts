@@ -10,7 +10,7 @@ const APP_ROUTES: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'project-gallery', component: ProjectGalleryComponent},
-  {path: 'project-detail', component: ProjectDetailComponent},
+  {path: 'projects/:id', component: ProjectDetailComponent},
   {path: 'admin', component: AdminComponent}
 ];
 

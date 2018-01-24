@@ -1,3 +1,6 @@
-<p>
-  project-detail works!
-</p>
+<div>
+  <h3><strong>Project Title: </strong>{{(projectToDisplay | async)?.title}}</h3>
+  <img src="{{(projectToDisplay | async)?.image}}">
+  <p><strong>Percent Funded: </strong>{{(projectToDisplay | async)?.percentFunded}}%</p>
+  <p>{{(projectToDisplay | async)?.description}}</p>
+</div>
