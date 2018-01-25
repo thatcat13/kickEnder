@@ -1,7 +1,13 @@
 <div>
-  <h3><strong>Project Title: </strong>{{(projectToDisplay | async)?.title}}</h3>
-  <img src="{{(projectToDisplay | async)?.image}}">
-  <p><strong>Percent Funded: </strong>{{(projectToDisplay | async)?.percentFunded}}%, <strong>amount needed to fund: </strong>${{(projectToDisplay | async)?.dollarAmt}}</p>
-  <p>{{(projectToDisplay | async)?.description}}</p>
-  <p><strong>Category: </strong>{{(projectToDisplay | async)?.category}}</p>
+  <h3><strong>Project Title: </strong>{{projectToDisplay?.title}}</h3>
+  <img src="{{projectToDisplay?.image}}">
+  <p><strong>Percent Funded: </strong>{{projectToDisplay?.percentFunded}}%, <strong>amount needed to fund: </strong>${{projectToDisplay?.dollarAmt}}</p>
+  <p>{{projectToDisplay?.description}}</p>
+  <p><strong>Category: </strong>{{projectToDisplay?.category}}</p>
 </div>
+
+<div class="user-delete-div">
+  <h4>Is it morally correct to delete this project from existence? Probably yes. Click that button.</h4>
+  <button  (click)="beginDeletingProject(projectToDisplay)" routerLink='/project-gallery'>Delete! Be gone!</button>
+</div>
+  <!-- <app-edit-project [selectedProject]='project'></app-edit-project> -->

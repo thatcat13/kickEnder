@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../project.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,7 +26,14 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+  this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+  this.projectToDisplay = dataLastEmittedFromObserver;
+  })
+}
+  beginDeletingProject(projectToDelete){
+    if(confirm("Are you sure you want to delete this project from the inventory?")){
+      this.projectService.deleteProject(projectToDelete);
+    }
   }
 
 }

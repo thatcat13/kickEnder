@@ -15,6 +15,7 @@ export class EditProjectComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    console.log(this.selectedProject)
   }
 
   beginUpdatingProject(projectToUpdate){
@@ -25,6 +26,7 @@ export class EditProjectComponent implements OnInit {
 
   beginDeletingProject(projectToDelete){
     if(confirm("Are you sure you want to delete this project from the inventory?")){
+      console.log(projectToDelete)
       this.projectService.deleteProject(projectToDelete);
     }
   }

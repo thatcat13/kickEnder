@@ -13,10 +13,11 @@
 <div id="gallery-content" class="row">
   <div *ngFor="let project of projects | async | filter: filterByAllProjects" class="card col-md-4">
     <img  class="card-img-top" src="{{project.image}}">
-    <h3 (click)="goToDetailPage(project)" class="card-text">{{project.title}}</h3>
+    <h3  class="card-text">{{project.title}}</h3>
     <div *ngIf="currentRoute === '/admin'" class="card-body">
       <hr>
       <app-edit-project [selectedProject]='project'></app-edit-project>
     </div>
+    <button (click)="goToDetailPage(project)">Check it out</button>
   </div>
 </div>

@@ -26,6 +26,6 @@ export class ProjectGalleryComponent implements OnInit {
   }
   onChange(optionFromMenu) {
     this.filterByAllProjects = optionFromMenu;
-}
+  }
 
 }

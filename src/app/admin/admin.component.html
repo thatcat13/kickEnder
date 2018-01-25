@@ -31,10 +31,14 @@
       <div>
         <label>Project Category:</label>
         <br>
-        <input #newCategory>
+        <select #newCategory>
+          <option value="entertainment">Entertainment</option>
+          <option value="technology">Technology</option>
+          <option value="misc">Misc</option>
+        </select>
       </div>
 
-      <button (click)="submitForm(newTitle.value,  newDescription.value, 0, dollarAmt.value, newImage.value, newCategory.value); newTitle.value=''; newDescription.value=''; newDollarAmt.value=''; newImage.value=''; newCategory.value='';">Add</button>
+      <button (click)="console.log(newCategory.value)" (click)="submitForm(newTitle.value,  newDescription.value, 0, dollarAmt.value, newImage.value, newCategory.value); newTitle.value=''; newDescription.value=''; newDollarAmt.value=''; newImage.value=''; newCategory.value='';">Add</button>
     </div>
   </div>
 </div>

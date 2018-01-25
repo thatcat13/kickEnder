@@ -33,6 +33,7 @@ export class ProjectService {
 
    deleteProject(localProjectToDelete){
     let projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
+    console.log(projectEntryInFirebase)
     projectEntryInFirebase.remove();
 }
 

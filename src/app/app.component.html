@@ -8,8 +8,11 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink='about'>About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="project-gallery">Project Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class='nav-link' routerLink="admin">Admin Only, MoFos!</a>
       </li>
     </ul>
   </div>
@@ -19,9 +22,3 @@
   <h1>{{title}}</h1>
   <router-outlet></router-outlet>
 </div>
-
-<footer class="footer">
-  <div class="container">
-    <a class="text-muted" routerLink="admin">Admin</a>
-  </div>
-</footer>
