@@ -16,7 +16,12 @@ export class AdminComponent implements OnInit {
   }
 
   submitForm(title: string, description: string, percentFunded: number, dollarAmt: string, image: string, category: string) {
-    let newProject: Project = new Project(title, description, percentFunded, parseInt(dollarAmt), image, category);
+    console.log(title);
+    let newProject: Project = new Project(title, description, percentFunded, dollarAmt, image, category);
     this.projectService.addProject(newProject);
+  }
+
+  fuuuuuck(thing1, thing2, thing3) {
+    console.log(thing1, thing2, thing3);
   }
 }

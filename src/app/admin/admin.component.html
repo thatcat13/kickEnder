@@ -17,6 +17,12 @@
       </div>
 
       <div>
+        <label>Percent Funded So Far:</label>
+        <br>
+        <input type="number" #newPercentFunded>
+      </div>
+
+      <div>
         <label>Dollar Amount Required to Fund:</label>
         <br>
         <input #newDollarAmt>
@@ -37,8 +43,7 @@
           <option value="misc">Misc</option>
         </select>
       </div>
-
-      <button (click)="console.log(newCategory.value)" (click)="submitForm(newTitle.value,  newDescription.value, 0, dollarAmt.value, newImage.value, newCategory.value); newTitle.value=''; newDescription.value=''; newDollarAmt.value=''; newImage.value=''; newCategory.value='';">Add</button>
+      <button (click)="submitForm(newTitle.value, newDescription.value, newPercentFunded.value, newDollarAmt.value, newImage.value, newCategory.value); newTitle.value=''; newDescription.value=''; newDollarAmt.value=''; newImage.value=''; newCategory.value=''; ">Add</button>
     </div>
   </div>
 </div>

@@ -29,6 +29,7 @@ export class ProjectDetailComponent implements OnInit {
   this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
   this.projectToDisplay = dataLastEmittedFromObserver;
   })
+  //this is the only place in this project where we're using a service to dynamically route the data into view; need subscribe()to manipulate the data.
 }
   beginDeletingProject(projectToDelete){
     if(confirm("Are you sure you want to delete this project from the inventory?")){

@@ -12,7 +12,7 @@
 <input [(ngModel)]="selectedProject.percentFunded">
 
 
-<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+<button (click)="beginUpdatingProject(selectedProject)" routerLink='/project-gallery'>Update</button>
 <!--trigger service's new method beginUpdatingProject() by event-binding that lives in edit-project component-->
 <hr>
-<button (click)="beginDeletingProject(selectedProject)">Delete</button>
+<button (click)="beginDeletingProject(selectedProject)" routerLink='/project-gallery'>Delete</button>
