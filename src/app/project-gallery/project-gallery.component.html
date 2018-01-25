@@ -1,9 +1,11 @@
 <h2>Project Gallery</h2>
 <div id="gallery-content" class="row">
-  <div *ngFor="let project of projects | async" (click)="goToDetailPage(project)" class="card col-md-4">
+  <div *ngFor="let project of projects | async" class="card col-md-4">
     <img  class="card-img-top" src="{{project.image}}">
-    <div class="card-body">
-      <h3 class="card-text">{{project.title}}</h3>
+    <h3 (click)="goToDetailPage(project)" class="card-text">{{project.title}}</h3>
+    <div *ngIf="currentRoute === '/admin'" class="card-body">
+      <hr>
+      <app-edit-project [selectedProject]='project'></app-edit-project>
     </div>
   </div>
 </div>
