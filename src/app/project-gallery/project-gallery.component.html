@@ -1,6 +1,17 @@
 <h2>Project Gallery</h2>
+<div id="filter-div">
+<label for="option-menu">Filter Results:</label>
+  <select name="option-menu" (change)="onChange($event.target.value)">
+    <option selected="selected" value="allProjects">All Project</option>
+    <option value="costOver10k">Projects 10k and over</option>
+    <option value="costUnder10k">Projects under 10k</option>
+    <option value="technology">Technology-based Projects</option>
+    <option value="entertainment">entertainment-based Projects</option>
+    <option value="misc">Miscellaneous Projects</option>
+  </select>
+</div>
 <div id="gallery-content" class="row">
-  <div *ngFor="let project of projects | async" class="card col-md-4">
+  <div *ngFor="let project of projects | async | filter: filterByAllProjects" class="card col-md-4">
     <img  class="card-img-top" src="{{project.image}}">
     <h3 (click)="goToDetailPage(project)" class="card-text">{{project.title}}</h3>
     <div *ngIf="currentRoute === '/admin'" class="card-body">

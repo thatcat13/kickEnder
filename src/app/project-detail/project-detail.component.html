@@ -1,6 +1,7 @@
 <div>
   <h3><strong>Project Title: </strong>{{(projectToDisplay | async)?.title}}</h3>
   <img src="{{(projectToDisplay | async)?.image}}">
-  <p><strong>Percent Funded: </strong>{{(projectToDisplay | async)?.percentFunded}}%</p>
+  <p><strong>Percent Funded: </strong>{{(projectToDisplay | async)?.percentFunded}}%, <strong>amount needed to fund: </strong>${{(projectToDisplay | async)?.dollarAmt}}</p>
   <p>{{(projectToDisplay | async)?.description}}</p>
+  <p><strong>Category: </strong>{{(projectToDisplay | async)?.category}}</p>
 </div>

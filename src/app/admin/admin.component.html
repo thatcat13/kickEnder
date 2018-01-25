@@ -17,12 +17,24 @@
       </div>
 
       <div>
+        <label>Dollar Amount Required to Fund:</label>
+        <br>
+        <input #newDollarAmt>
+      </div>
+
+      <div>
         <label>Project Image:</label>
         <br>
         <input #newImage>
       </div>
 
-      <button (click)="submitForm(newTitle.value,  newDescription.value, 0, newImage.value); newTitle.value=''; newDescription.value=''; newImage.value=''">Add</button>
+      <div>
+        <label>Project Category:</label>
+        <br>
+        <input #newCategory>
+      </div>
+
+      <button (click)="submitForm(newTitle.value,  newDescription.value, 0, dollarAmt.value, newImage.value, newCategory.value); newTitle.value=''; newDescription.value=''; newDollarAmt.value=''; newImage.value=''; newCategory.value='';">Add</button>
     </div>
   </div>
 </div>

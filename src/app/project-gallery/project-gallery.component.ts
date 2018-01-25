@@ -13,6 +13,7 @@ import { ProjectService } from '../project.service';
 export class ProjectGalleryComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  filterByAllProjects: string = "allProjects";
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
@@ -23,5 +24,8 @@ export class ProjectGalleryComponent implements OnInit {
   goToDetailPage(clickedProject) {
     this.router.navigate(['projects', clickedProject.$key])
   }
+  onChange(optionFromMenu) {
+    this.filterByAllProjects = optionFromMenu;
+}
 
 }
