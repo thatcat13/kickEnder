@@ -21,7 +21,4 @@ export class AdminComponent implements OnInit {
     this.projectService.addProject(newProject);
   }
 
-  fuuuuuck(thing1, thing2, thing3) {
-    console.log(thing1, thing2, thing3);
-  }
 }
